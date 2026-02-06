@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:#fdecef;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Segoe UI', sans-serif;
+}
+.card{
+  background:white;
+  width:90%;
+  max-width:330px;
+  padding:22px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  animation:fadeIn 1s;
+}
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:25px;
+  margin:8px;
+  font-size:15px;
+  cursor:pointer;
+}
+.yes{
+  background:#ff4d6d;
+  color:white;
+}
+.soft{
+  background:#ffd6e0;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:scale(0.9);}
+  to{opacity:1;transform:scale(1);}
+}
+.heart{
+  font-size:40px;
+  animation:pulse 1s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="box">
+  <div class="heart">❤️</div>
+  <p><b>Tap to open</b></p>
+  <button class="soft" onclick="openCard()">Open 💌</button>
+</div>
+
+<script>
+function openCard(){
+  document.getElementById("box").innerHTML = `
+    <h3>Hey Love,</h3>
+    <p>
+      Somewhere between our conversations,<br>
+      your smile became my comfort 💖<br><br>
+      Life feels warmer and happier with you.
+    </p>
+    <p><b>Will you be my Valentine? 💕</b></p>
+    <button class="yes" onclick="yes()">Yes 💞</button>
+    <button class="soft">Blushing already 😊</button>
+  `;
+}
+
+function yes(){
+  document.getElementById("box").innerHTML = `
+    <h3>He said YES 💘</h3>
+    <p>
+      And my heart has never felt this happy 🥰<br>
+      Thank you for being you.
+    </p><img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="140">
+    <br><br>
+    <b>Happy Valentine’s Day ❤️</b>
+  `;
+}
+</script>
+
+</body>
+</html>
